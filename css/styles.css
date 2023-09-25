@@ -76,6 +76,10 @@ body {
     vertical-align: middle;
 }
 
+.button-card-text {
+    margin-right: 10px;
+}
+
 .button-text {
     vertical-align: middle;
 }
@@ -108,17 +112,17 @@ body {
 .section-heading {
     display: flex;
     align-items: center;
-    justify-content: space-between;
     margin-bottom: 44px;
 }
 
 .section-title {
     font-style: normal;
-    font-weight: bold;
+    font-weight: 700;
     font-size: 36px;
     line-height: 42px;
     margin: 0;
     color: #000000;
+    margin-right: 30px;
 }
 
 .cards {
@@ -135,12 +139,11 @@ body {
     overflow: hidden;
     margin-bottom: 30px;
     flex-basis: 31%;
-    text-decoration: none;
 }
 
 .card-image {
     width: 384px;
-    height: 250px;
+    max-height: 250px;
     object-fit: cover;
 }
 
@@ -160,8 +163,8 @@ body {
 .card-title {
     margin: 0;
     font-style: normal;
-    font-weight: bold;
-    font-size: 24px;
+    font-weight: 400;
+    font-size: 23px;
     line-height: 32px;
 }
 
@@ -182,6 +185,19 @@ body {
     flex-wrap: wrap;
 }
 
+.card-buttons {
+    display: flex;
+    align-items: center;
+    margin-top: 24px;
+}
+
+.card-price-bold {
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 32px;
+    margin-left: 32px;
+}
+
 .rating {
     margin-right: 26px;
     color: #ffc107;
@@ -200,11 +216,10 @@ body {
     margin-right: 10px;
 }
 
-.category {
-    text-overflow: ellipsis;
-    overflow: hidden;
-    white-space: nowrap;
-    max-width: 150px;
+.ingredients {
+    color: #8c8c8c;
+    font-size: 17px;
+    line-height: 21px;
 }
 
 .price:after {
@@ -272,7 +287,8 @@ body {
         margin-right: 15px;
     }
 
-    .category, .price {
+    .category,
+    .price {
         font-size: 14px;
     }
 }
@@ -300,6 +316,18 @@ body {
     .footer-link {
         font-size: 16px;
     }
+
+    .card-title {
+        font-size: 18px;
+    }
+
+    .ingredients {
+        font-size: 16px;
+    }
+
+    .card-image {
+        max-height: 214px;
+    }
 }
 
 @media (max-width: 768px) {
@@ -321,12 +349,16 @@ body {
         flex-wrap: wrap;
     }
 
-    .rating {
+    .card.rating {
         flex-basis: 100%;
     }
 
     .card-title {
         font-size: 18px;
+    }
+
+    .ingredients {
+        font-size: 15px;
     }
 }
 
@@ -360,15 +392,11 @@ body {
     }
 
     .section-title {
-        font-size: 20px;
+        font-size: 25px;
     }
 
     .card {
         flex-basis: 100%;
-    }
-
-    .card-image {
-        width: 100%;
     }
 
     .card-title {
