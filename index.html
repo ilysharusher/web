@@ -1,179 +1,510 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang='en'>
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Delivery Food - доставка еды на дом</title>
-	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-	<link rel="stylesheet" href="css\normalize.css">
-	<link rel="stylesheet" href="css\style.css">
+  <meta charset='UTF-8' />
+  <meta name='viewport' content='width=device-width, initial-scale=1.0' />
+  <link href='./dist/output.css' rel='stylesheet' />
+  <title>Food Delivery</title>
 </head>
-<body>
-<div class="container">
-	<header class="header">
-		<a href="index.html" class="logo">
-			<img src="img\logo.svg" alt="Logo">
-		</a>
-		<input type="text" class="input input-address" placeholder="Адрес доставки">
-		<div class="buttons">
-			<button class="button button-primary">
-				<img src="img/user.svg" alt="user" class="button-icon">
-				<span class="button-text">Войти</span>
-			</button>
-			<button class="button">
-				<img src="img/shopping-card.svg" alt="shopping-card" class="button-icon">
-				<span class="button-text">Корзина</span>
-			</button>
-		</div>
-	</header>
-</div>
-<!-- /.container -->
-<main class="main">
-	<div class="container">
-		<section class="promo">
-			<h1 class="promo-title">Онлайн-сервис <br> доставки еды на дом</h1>
-			<p class="promo-text">Блюда из любимого ресторана привезет курьер в перчатках, маске и с антисептиком</p>
-		</section>
-		<section class="restaurant">
-			<div class="section-heading">
-				<h2 class="section-title">Рестораны</h2>
-				<input type="text" class="input input-search" placeholder="Поиск блюд и ресторанов">
-			</div>
-			<div class="cards">
-				<!-- /.cards -->
-				<div class="card">
-					<img src="img/image.jpg" alt="card-image" class="card-image">
-					<div class="card-text">
-						<div class="card-heading">
-							<h3 class="card-title">Пицца плюс</h3>
-							<span class="card-tag tag">50 мин</span>
-						</div>
-						<!-- /.card-heading -->
-						<div class="card-info">
-							<div class="rating"><img src="img/rating.svg" alt="rating" class="rating-star"> 4.5</div>
-							<div class="price">От 900 ₽</div>
-							<div class="category">Пицца</div>
-						</div>
-						<!-- /.card-info -->
-					</div>
-					<!-- /.card-text -->
-				</div>
-				<!-- /.card -->
-				<a href="restaurant.html" class="card">
-					<img src="img/tanuki.jpg" alt="card-image" class="card-image">
-					<div class="card-text">
-						<div class="card-heading">
-							<h3 class="card-title">Тануки</h3>
-							<span class="card-tag tag">60 мин</span>
-						</div>
-						<!-- /.card-heading -->
-						<div class="card-info">
-							<div class="rating"><img src="img/rating.svg" alt="rating" class="rating-star"> 4.0</div>
-							<div class="price">От 1000 ₽</div>
-							<div class="category">Суши</div>
-						</div>
-						<!-- /.card-info -->
-					</div>
-					<!-- /.card-text -->
-				</a>
-				<!-- /.card -->
-				<div class="card">
-					<img src="img/foodband.jpg" alt="card-image" class="card-image">
-					<div class="card-text">
-						<div class="card-heading">
-							<h3 class="card-title">FoodBand</h3>
-							<span class="card-tag tag">90 мин</span>
-						</div>
-						<!-- /.card-heading -->
-						<div class="card-info">
-							<div class="rating"><img src="img/rating.svg" alt="rating" class="rating-star"> 5.0</div>
-							<div class="price">От 1200 ₽</div>
-							<div class="category">Еда</div>
-						</div>
-						<!-- /.card-info -->
-					</div>
-					<!-- /.card-text -->
-				</div>
-				<!-- /.card -->
-				<div class="card">
-					<img src="img/pizza%20j.jpg" alt="card-image" class="card-image">
-					<div class="card-text">
-						<div class="card-heading">
-							<h3 class="card-title">Жадина пицца</h3>
-							<span class="card-tag tag">45 мин</span>
-						</div>
-						<!-- /.card-heading -->
-						<div class="card-info">
-							<div class="rating"><img src="img/rating.svg" alt="rating" class="rating-star"> 4.9</div>
-							<div class="price">От 970 ₽</div>
-							<div class="category">Суши</div>
-						</div>
-						<!-- /.card-info -->
-					</div>
-					<!-- /.card-text -->
-				</div>
-				<!-- /.card -->
-				<div class="card">
-					<img src="img/tochka.jpg" alt="card-image" class="card-image">
-					<div class="card-text">
-						<div class="card-heading">
-							<h3 class="card-title">Точка еды</h3>
-							<span class="card-tag tag">50-60 мин</span>
-						</div>
-						<!-- /.card-heading -->
-						<div class="card-info">
-							<div class="rating"><img src="img/rating.svg" alt="rating" class="rating-star"> 4.5</div>
-							<div class="price">От 1500 ₽</div>
-							<div class="category">Еда</div>
-						</div>
-						<!-- /.card-info -->
-					</div>
-					<!-- /.card-text -->
-				</div>
-				<!-- /.card -->
-				<div class="card">
-					<img src="img/pizzaburger.jpg" alt="card-image" class="card-image">
-					<div class="card-text">
-						<div class="card-heading">
-							<h3 class="card-title">PizzaBurger</h3>
-							<span class="card-tag tag">50 мин</span>
-						</div>
-						<!-- /.card-heading -->
-						<div class="card-info">
-							<div class="rating"><img src="img/rating.svg" alt="rating" class="rating-star"> 5.0</div>
-							<div class="price">От 2000 ₽</div>
-							<div class="category">Пицца</div>
-						</div>
-						<!-- /.card-info -->
-					</div>
-					<!-- /.card-text -->
-				</div>
-				<!-- /.card -->
-			</div>
-		</section>
-	</div>
-	<!-- /.container -->
+<body style='background: linear-gradient(180deg, rgba(245, 245, 245, 0) 1.04%, #f5f5f5 100%)'>
+<header class='w-full'>
+  <div class='xl:max-w-[1200px] mx-0 sm:mx-auto px-4 sm:px-0 container md:py-10 sm:py-8 py-6'>
+    <div class='flex justify-between items-center space-x-4'>
+      <a href='index.html'>
+        <div>
+          <img src='./src/images/icons/logo.svg' alt='logo' />
+        </div>
+      </a>
+
+      <div class='max-w-[690px] shrink-0 py-2 pr-3 pl-8 sm:flex hidden border border-gray-5 rounded-sm grow'>
+        <img src='./src/images/icons/home.svg' alt='home icon' class='mr-1' />
+        <input class='shrink-0 block h-6 focus:outline-none' type='text' placeholder='Адрес доставки' />
+      </div>
+
+      <div class='flex space-x-2.5'>
+        <a href='#' class='py-2 px-4 bg-blue-6 rounded-sm text-white flex items-center logout-button hidden'>
+          <span class='sm:block hidden'>Выйти</span>
+        </a>
+
+        <a href='#' class='py-2 px-4 bg-blue-6 rounded-sm text-white flex items-center auth-button'>
+          <img src='./src/images/icons/user.svg' alt='user icon' class='mr-1' />
+          <span class='sm:block hidden'>Войти</span>
+        </a>
+
+        <a href='#' class='py-2 px-4 border border-gray-5 rounded-sm bg-white text-gray-8 flex items-center' id='cart-button'>
+          <img src='./src/images/icons/cart.svg' alt='cart icon' class='mr-1' />
+          <span class='sm:block hidden'>Корзина</span>
+        </a>
+      </div>
+    </div>
+
+    <div class='w-full py-2 pr-3 pl-8 flex sm:hidden border border-gray-5 rounded-sm grow mt-3'>
+      <img src='./src/images/icons/home.svg' alt='home icon' class='mr-1' />
+      <input class='block h-6 w-full focus:outline-none' type='text' placeholder='Адрес доставки' />
+    </div>
+  </div>
+</header>
+
+<main class='font-sans-serif'>
+  <section class='xl:max-w-[1200px] mx-0 sm:mx-auto px-4 sm:px-0 container'>
+    <div
+      class='max-h-[300px] w-full bg-[url(/src/images/banners/vegetables.jpg)] bg-cover bg-no-repeat md:p-[68px] sm:p-10 p-5 shadow-sm rounded-[10px]'
+    >
+      <div class='text-gray-banner md:max-w-[540px] max-w-[400px]'>
+        <h1 class='md:text-[39px] sm:text-3xl text-2xl font-bold'>
+          Онлайн-сервис <br />
+          доставки еды на дом
+        </h1>
+        <p class='md:text-2xl dm:text-xl text-lg'>
+          Блюда из любимого ресторана привезет курьер в перчатках, маске и с антисептиком
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class='md:pt-[60px] sm:pt-12 pt-9'>
+    <div class='xl:max-w-[1200px] mx-0 sm:mx-auto px-4 sm:px-0 container'>
+      <div class='flex sm:flex-row flex-col justify-between w-full sm:space-y-0 space-y-2 md:pb-10 sm:pb-8 pb-6'>
+        <h2 class='md:text-4xl sm:text-3xl text-xl font-bold'>Рестораны</h2>
+        <div class='py-2 pr-3 pl-8 flex border border-gray-5 rounded-sm'>
+          <img src='./src/images/icons/search.svg' alt='search icon' class='mr-1' />
+          <input
+            class='block h-6 sm:w-[262px] w-full focus:outline-none'
+            type='search'
+            placeholder='Поиск блюд и ресторанов'
+          />
+        </div>
+      </div>
+
+      <div
+        class='grid lg:grid-cols-3 sm:grid-cols-2 grid-cols-1 lg:gap-x-6 gap-x-4 lg:gap-y-[30px] sm:gap-y-6 gap-y-4'
+      >
+        <a href='restaran.html'>
+          <div class='rounded-lg shadow-md overflow-hidden reveal-step-animation'>
+            <div
+              class='w-full bg-cover bg-center bg-no-repeat h-[250px] bg-[url(/src/images/products/pizza-plus.jpg)]'
+            ></div>
+            <div class='bg-white md:px-6 sm:px-5 px-4 sm:pt-5 pt-4 md:pb-9 sm:pb-8 pb-7'>
+              <div class='flex items-center justify-between'>
+                <h4 class='font-bold md:text-2xl sm:text-xl text-lg'>Пицца плюс</h4>
+
+                <div class='px-2 bg-black text-white sm:text-[12px] text-[11px] leading-5 rounded-sm'>50 мин</div>
+              </div>
+
+              <div class='flex items-baseline space-x-6 mt-2.5'>
+                <div class='text-yellow-rating flex items-baseline sm:text-base text-sm'>
+                  <img src='./src/images/icons/rating.svg' alt='search icon' class='mr-2' />
+
+                  4.5
+                </div>
+
+                <div class='text-gray-7 md:text-lg sm:text-base text-sm'>
+                  От 900 ₴
+                  <span class='font-bold px-2'>•</span> Пицца
+                </div>
+              </div>
+            </div>
+          </div>
+        </a>
+
+        <a href='restaran.html'>
+          <div class='rounded-lg shadow-md overflow-hidden reveal-step-animation'>
+            <div
+              class='w-full bg-cover bg-center bg-no-repeat h-[250px] bg-[url(/src/images/products/tanuki.jpg)]'
+            ></div>
+            <div class='bg-white md:px-6 sm:px-5 px-4 sm:pt-5 pt-4 md:pb-9 sm:pb-8 pb-7'>
+              <div class='flex items-center justify-between'>
+                <h4 class='font-bold md:text-2xl sm:text-xl text-lg'>Тануки</h4>
+
+                <div class='px-2 bg-black text-white sm:text-[12px] text-[11px] leading-5 rounded-sm'>30 мин</div>
+              </div>
+
+              <div class='flex items-baseline space-x-6 mt-2.5'>
+                <div class='text-yellow-rating flex items-baseline sm:text-base text-sm'>
+                  <img src='./src/images/icons/rating.svg' alt='search icon' class='mr-2' />
+
+                  4.3
+                </div>
+
+                <div class='text-gray-7 md:text-lg sm:text-base text-sm'>
+                  От 700 ₴
+                  <span class='font-bold px-2'>•</span> Пицца
+                </div>
+              </div>
+            </div>
+          </div>
+        </a>
+
+        <a href='restaran.html'>
+          <div class='rounded-lg shadow-md overflow-hidden reveal-step-animation'>
+            <div
+              class='w-full bg-cover bg-center bg-no-repeat h-[250px] bg-[url(/src/images/products/foodband.jpg)]'
+            ></div>
+            <div class='bg-white md:px-6 sm:px-5 px-4 sm:pt-5 pt-4 md:pb-9 sm:pb-8 pb-7'>
+              <div class='flex items-center justify-between'>
+                <h4 class='font-bold md:text-2xl sm:text-xl text-lg'>FoodBand</h4>
+
+                <div class='px-2 bg-black text-white sm:text-[12px] text-[11px] leading-5 rounded-sm'>20 мин</div>
+              </div>
+
+              <div class='flex items-baseline space-x-6 mt-2.5'>
+                <div class='text-yellow-rating flex items-baseline sm:text-base text-sm'>
+                  <img src='./src/images/icons/rating.svg' alt='search icon' class='mr-2' />
+
+                  4.8
+                </div>
+
+                <div class='text-gray-7 md:text-lg sm:text-base text-sm'>
+                  От 1200 ₴
+                  <span class='font-bold px-2'>•</span> Пицца
+                </div>
+              </div>
+            </div>
+          </div>
+        </a>
+
+        <a href='restaran.html'>
+          <div class='rounded-lg shadow-md overflow-hidden reveal-step-animation'>
+            <div
+              class='w-full bg-cover bg-center bg-no-repeat h-[250px] bg-[url(/src/images/products/greedy-pizza.jpg)]'
+            ></div>
+            <div class='bg-white md:px-6 sm:px-5 px-4 sm:pt-5 pt-4 md:pb-9 sm:pb-8 pb-7'>
+              <div class='flex items-center justify-between'>
+                <h4 class='font-bold md:text-2xl sm:text-xl text-lg'>Жадина-пицца</h4>
+
+                <div class='px-2 bg-black text-white sm:text-[12px] text-[11px] leading-5 rounded-sm'>50 мин</div>
+              </div>
+
+              <div class='flex items-baseline space-x-6 mt-2.5'>
+                <div class='text-yellow-rating flex items-baseline sm:text-base text-sm'>
+                  <img src='./src/images/icons/rating.svg' alt='search icon' class='mr-2' />
+
+                  4.2
+                </div>
+
+                <div class='text-gray-7 md:text-lg sm:text-base text-sm'>
+                  От 500 ₴
+                  <span class='font-bold px-2'>•</span> Пицца
+                </div>
+              </div>
+            </div>
+          </div>
+        </a>
+
+        <a href='restaran.html'>
+          <div class='rounded-lg shadow-md overflow-hidden reveal-step-animation'>
+            <div
+              class='w-full bg-cover bg-center bg-no-repeat h-[250px] bg-[url(/src/images/products/food-point.jpg)]'
+            ></div>
+            <div class='bg-white md:px-6 sm:px-5 px-4 sm:pt-5 pt-4 md:pb-9 sm:pb-8 pb-7'>
+              <div class='flex items-center justify-between'>
+                <h4 class='font-bold md:text-2xl sm:text-xl text-lg'>Точка еды</h4>
+
+                <div class='px-2 bg-black text-white sm:text-[12px] text-[11px] leading-5 rounded-sm'>55 мин</div>
+              </div>
+
+              <div class='flex items-baseline space-x-6 mt-2.5'>
+                <div class='text-yellow-rating flex items-baseline sm:text-base text-sm'>
+                  <img src='./src/images/icons/rating.svg' alt='search icon' class='mr-2' />
+
+                  3.2
+                </div>
+
+                <div class='text-gray-7 md:text-lg sm:text-base text-sm'>
+                  От 500 ₴
+                  <span class='font-bold px-2'>•</span> Пицца
+                </div>
+              </div>
+            </div>
+          </div>
+        </a>
+
+        <a href='restaran.html'>
+          <div class='rounded-lg shadow-md overflow-hidden reveal-step-animation'>
+            <div
+              class='w-full bg-cover bg-center bg-no-repeat h-[250px] bg-[url(/src/images/products/pizza-burger.jpg)]'
+            ></div>
+            <div class='bg-white md:px-6 sm:px-5 px-4 sm:pt-5 pt-4 md:pb-9 sm:pb-8 pb-7'>
+              <div class='flex items-center justify-between'>
+                <h4 class='font-bold md:text-2xl sm:text-xl text-lg'>PizzaBurger</h4>
+
+                <div class='px-2 bg-black text-white sm:text-[12px] text-[11px] leading-5 rounded-sm'>45 мин</div>
+              </div>
+
+              <div class='flex items-baseline space-x-6 mt-2.5'>
+                <div class='text-yellow-rating flex items-baseline sm:text-base text-sm'>
+                  <img src='./src/images/icons/rating.svg' alt='search icon' class='mr-2' />
+
+                  5.0
+                </div>
+
+                <div class='text-gray-7 md:text-lg sm:text-base text-sm'>
+                  От 1000 ₴
+                  <span class='font-bold px-2'>•</span> Пицца
+                </div>
+              </div>
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
 </main>
 
-<footer class="footer">
-	<div class="containr">
-		<div class="footer-block">
-			<img src="img/logo.svg" alt="logo" class="logo footer-logo">
-			<nav class="footer-nav">
-				<a href="#" class="footer-link">Рестораны</a>
-				<a href="#" class="footer-link">Курьерам</a>
-				<a href="#" class="footer-link">Пресс-центр</a>
-				<a href="#" class="footer-link">Контакты</a>
-			</nav>
-			<div class="social-links">
-				<a href="#" class="social-link"><img src="img/inst.svg" alt="instagram"></a>
-				<a href="#" class="social-link"><img src="img/facebook.svg" alt="facebook"></a>
-				<a href="#" class="social-link"><img src="img/vk.svg" alt="vk"></a>
-			</div>
-			<!-- /.social-links -->
-		</div>
-		<!-- /.footer-block -->
-	</div>
+<footer class='font-sans-serif bg-white md:mt-[90px] mt-16'>
+  <div class='xl:max-w-[1200px] mx-0 sm:mx-auto px-4 sm:px-0 container flex justify-between items-center py-10'>
+    <div class='space-x-9 flex items-center'>
+      <a href='index.html'>
+        <div>
+          <img src='./src/images/icons/logo.svg' alt='logo' />
+        </div>
+      </a>
+
+      <nav class=''>
+        <ul class='grid gap-x-4 gap-y-1 text-gray-8 md:grid-cols-4 sm:grid-cols-3 grid-cols-2 sm:text-base text-sm'>
+          <li><a href='#'>Ресторанам</a></li>
+          <li><a href='#'>Курьерам</a></li>
+          <li><a href='#'>Пресс-центр</a></li>
+          <li><a href='#'>Контакты</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <div class=''>
+      <ul class='flex space-x-5'>
+        <li>
+          <a href='#'>
+            <img src='./src/images/icons/insta.svg' alt='insta logo' />
+          </a>
+        </li>
+        <li>
+          <a href='#'>
+            <img src='./src/images/icons/meta.png' alt='insta logo' />
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
 </footer>
+
+
+<section class='bg-neutral-900 bg-opacity-70 fixed top-0 right-0 left-0 w-screen auth-modal hidden'>
+  <div class='flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0'>
+    <div class='w-full bg-white rounded-lg shadow md:mt-0 sm:max-w-md xl:p-0 relative'>
+      <div class=' absolute z-10 right-3 text-neutral-900 text-4xl cursor-pointer close-auth'>×</div>
+
+      <div class='p-6 space-y-4 md:space-y-6 sm:p-8 relative'>
+        <h1 class='text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl'>
+          Авторизация
+        </h1>
+        <form class='space-y-4 md:space-y-6' id='login-form'>
+          <div>
+            <label for='login' class='block mb-2 text-sm font-medium text-gray-900'>Логин</label>
+            <input type='text' name='login' id='login'
+                   class='bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5'
+                   placeholder='username' required=''>
+          </div>
+          <div>
+            <label for='password' class='block mb-2 text-sm font-medium text-gray-900'>Пароль</label>
+            <input type='password' name='password' id='password' placeholder='••••••••'
+                   class='bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5'
+                   required=''>
+          </div>
+
+          <button type='submit'
+                  class='w-full text-white bg-primary-600 hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center bg-blue-6'>
+            Вхід
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div
+  class="font-sans-serif modal absolute h-screen w-screen z-10 top-0 right-0 bg-black bg-opacity-40 flex sm:items-center items-start justify-center hidden"
+>
+  <div class="z-20 bg-white sm:px-11 px-8 sm:py-10 py-7 w-full sm:w-auto h-full sm:h-auto sm:rounded-sm">
+    <div class="flex items-center justify-between">
+      <h3 class="md:text-4xl sm:text-3xl text-xl font-bold">Корзина</h3>
+      <div class="close md:w-[25px] sm:w-5 w-4 md:h-[25px] sm:h-5 h-4" role="button">
+        <img src="/src/images/icons/x-mark.svg" alt="close button" />
+      </div>
+    </div>
+
+    <div class="w-full mt-11">
+      <ul class="flex flex-col w-full space-y-[15px]">
+        <li
+          class="flex w-full sm:flex-row flex-wrap justify-between items-start pb-2.5 md:space-x-[384px] sm:space-x-[200px] border-b border-gray-5"
+        >
+          <div class="leading-8">Ролл угорь стандарт</div>
+          <div class="flex items-center md:space-x-12 sm:space-x-10 space-x-4">
+            <div class="sm:text-lg text-base font-bold">250 ₴</div>
+
+            <div class="flex">
+              <div
+                class="border border-blue-6 text-blue-6 sm:w-10 sm:py-[3px] w-8 py-0.5 text-center sm:block hidden rounded-sm"
+                role="button"
+              >
+                -
+              </div>
+              <input
+                type="number"
+                value="1"
+                class="arrows-none w-10 h-8 text-center appearance-none focus:ring-0 focus:outline-none focus:border-none"
+              />
+              <div class="text-sm sm:hidden self-center ml-1">шт.</div>
+              <div
+                class="border border-blue-6 text-blue-6 sm:w-10 sm:py-[3px] w-8 py-0.5 text-center sm:block hidden rounded-sm"
+                role="button"
+              >
+                +
+              </div>
+            </div>
+          </div>
+        </li>
+        <li
+          class="flex w-full sm:flex-row flex-wrap justify-between items-start pb-2.5 md:space-x-[384px] sm:space-x-[200px] border-b border-gray-5"
+        >
+          <div class="leading-8">Ролл угорь стандарт</div>
+          <div class="flex items-center md:space-x-12 sm:space-x-10 space-x-4">
+            <div class="sm:text-lg text-base font-bold">250 ₴</div>
+
+            <div class="flex">
+              <div
+                class="border border-blue-6 text-blue-6 sm:w-10 sm:py-[3px] w-8 py-0.5 text-center sm:block hidden rounded-sm"
+                role="button"
+              >
+                -
+              </div>
+              <input
+                type="number"
+                value="1"
+                class="arrows-none w-10 h-8 text-center appearance-none focus:ring-0 focus:outline-none focus:border-none"
+              />
+              <div class="text-sm sm:hidden self-center ml-1">шт.</div>
+              <div
+                class="border border-blue-6 text-blue-6 sm:w-10 sm:py-[3px] w-8 py-0.5 text-center sm:block hidden rounded-sm"
+                role="button"
+              >
+                +
+              </div>
+            </div>
+          </div>
+        </li>
+        <li
+          class="flex w-full sm:flex-row flex-wrap justify-between items-start pb-2.5 md:space-x-[384px] sm:space-x-[200px] border-b border-gray-5"
+        >
+          <div class="leading-8">Ролл угорь стандарт</div>
+          <div class="flex items-center md:space-x-12 sm:space-x-10 space-x-4">
+            <div class="sm:text-lg text-base font-bold">250 ₴</div>
+
+            <div class="flex">
+              <div
+                class="border border-blue-6 text-blue-6 sm:w-10 sm:py-[3px] w-8 py-0.5 text-center sm:block hidden rounded-sm"
+                role="button"
+              >
+                -
+              </div>
+              <input
+                type="number"
+                value="1"
+                class="arrows-none w-10 h-8 text-center appearance-none focus:ring-0 focus:outline-none focus:border-none"
+              />
+              <div class="text-sm sm:hidden self-center ml-1">шт.</div>
+              <div
+                class="border border-blue-6 text-blue-6 sm:w-10 sm:py-[3px] w-8 py-0.5 text-center sm:block hidden rounded-sm"
+                role="button"
+              >
+                +
+              </div>
+            </div>
+          </div>
+        </li>
+        <li
+          class="flex w-full sm:flex-row flex-wrap justify-between items-start pb-2.5 md:space-x-[384px] sm:space-x-[200px] border-b border-gray-5"
+        >
+          <div class="leading-8">Ролл угорь стандарт</div>
+          <div class="flex items-center md:space-x-12 sm:space-x-10 space-x-4">
+            <div class="sm:text-lg text-base font-bold">250 ₴</div>
+
+            <div class="flex">
+              <div
+                class="border border-blue-6 text-blue-6 sm:w-10 sm:py-[3px] w-8 py-0.5 text-center sm:block hidden rounded-sm"
+                role="button"
+              >
+                -
+              </div>
+              <input
+                type="number"
+                value="1"
+                class="arrows-none w-10 h-8 text-center appearance-none focus:ring-0 focus:outline-none focus:border-none"
+              />
+              <div class="text-sm sm:hidden self-center ml-1">шт.</div>
+              <div
+                class="border border-blue-6 text-blue-6 sm:w-10 sm:py-[3px] w-8 py-0.5 text-center sm:block hidden rounded-sm"
+                role="button"
+              >
+                +
+              </div>
+            </div>
+          </div>
+        </li>
+        <li
+          class="flex w-full sm:flex-row flex-wrap justify-between items-start pb-2.5 md:space-x-[384px] sm:space-x-[200px] border-b border-gray-5"
+        >
+          <div class="leading-8">Ролл угорь стандарт</div>
+          <div class="flex items-center md:space-x-12 sm:space-x-10 space-x-4">
+            <div class="sm:text-lg text-base font-bold">250 ₴</div>
+
+            <div class="flex">
+              <div
+                class="border border-blue-6 text-blue-6 sm:w-10 sm:py-[3px] w-8 py-0.5 text-center sm:block hidden rounded-sm"
+                role="button"
+              >
+                -
+              </div>
+              <input
+                type="number"
+                value="1"
+                class="arrows-none w-10 h-8 text-center appearance-none focus:ring-0 focus:outline-none focus:border-none"
+              />
+              <div class="text-sm sm:hidden self-center ml-1">шт.</div>
+              <div
+                class="border border-blue-6 text-blue-6 sm:w-10 sm:py-[3px] w-8 py-0.5 text-center sm:block hidden rounded-sm"
+                role="button"
+              >
+                +
+              </div>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+    <div class="w-full mt-[52px] flex justify-between items-center">
+      <div>
+        <div
+          class="bg-gray-9 text-gray-2 sm:px-5 px-2 sm:py-3 py-2 sm:text-lg text-base sm:rounded-md rounded-sm font-bold"
+        >
+          1250 ₴
+        </div>
+      </div>
+
+      <div class="sm:space-x-[18px] space-x-2 flex">
+        <div class="bg-blue-6 sm:px-4 px-3 py-2 text-white rounded-sm sm:text-base text-sm" role="button">
+          Оформить заказ
+        </div>
+        <div class="bg-white border border-gray-5 sm:px-4 px-3 py-2 rounded-xm close text-sm" role="button">
+          Отмена
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src='./src/js/main.js'></script>
+<script src='https://unpkg.com/scrollreveal'></script>
+<script src='./src/js/animate.js'></script>
 </body>
 </html>
