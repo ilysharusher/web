@@ -22,11 +22,17 @@ const loginForm = document.querySelector('#login-form')
 const loginInput = document.querySelector('#login')
 const passwordInput = document.querySelector('#password')
 const logoutButton = document.querySelector('.logout-button')
+const authModalInner = document.querySelector('.modal-inner')
+const authModalBackdrop = document.querySelector('.modal-backdrop')
 
+authModalBackdrop.addEventListener('click', toggleModalAuth)
+authModalInner.addEventListener('click', (event) => event.stopPropagation())
 let login = localStorage.getItem('user')
 
 function toggleModalAuth() {
-  console.log('toggleModalAuth')
+  loginInput.classList.remove('border-red-500')
+  passwordInput.classList.remove('border-red-500')
+  body.classList.toggle('overflow-hidden')
   authModal.classList.toggle('hidden')
 }
 
@@ -54,20 +60,26 @@ function notAuthorized() {
     event.preventDefault()
     login = loginInput.value
 
-    if (login) {
-      if (passwordInput.value !== '123' && login === 'user') return
-      localStorage.setItem('user', login)
-      toggleModalAuth()
-      authButton.classList.add('hidden')
-      logoutButton.classList.remove('hidden')
-      authButton.removeEventListener('click', toggleModalAuth)
-      closeAuth.removeEventListener('click', toggleModalAuth)
-      loginForm.removeEventListener('submit', logIn)
-      loginForm.reset()
-      checkAuth()
-    } else {
-      alert('Будь ласка, введіть логін та пароль')
+    if (!login.trim()) {
+      loginInput.classList.add('border-red-500')
     }
+
+    if (!passwordInput.value.trim()) {
+      passwordInput.classList.add('border-red-500')
+      return
+    }
+
+    if (passwordInput.value !== '123' || login !== 'user') return
+    localStorage.setItem('user', login)
+    toggleModalAuth()
+    authButton.classList.add('hidden')
+    logoutButton.classList.remove('hidden')
+    authButton.removeEventListener('click', toggleModalAuth)
+    closeAuth.removeEventListener('click', toggleModalAuth)
+    loginForm.removeEventListener('submit', logIn)
+    loginForm.reset()
+    checkAuth()
+
   }
 
   authButton.addEventListener('click', toggleModalAuth)

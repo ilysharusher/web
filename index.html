@@ -31,7 +31,8 @@
           <span class='sm:block hidden'>Войти</span>
         </a>
 
-        <a href='#' class='py-2 px-4 border border-gray-5 rounded-sm bg-white text-gray-8 flex items-center' id='cart-button'>
+        <a href='#' class='py-2 px-4 border border-gray-5 rounded-sm bg-white text-gray-8 flex items-center'
+           id='cart-button'>
           <img src='./src/images/icons/cart.svg' alt='cart icon' class='mr-1' />
           <span class='sm:block hidden'>Корзина</span>
         </a>
@@ -288,13 +289,13 @@
 </footer>
 
 
-<section class='bg-neutral-900 bg-opacity-70 fixed top-0 right-0 left-0 w-screen auth-modal hidden'>
+<section class='bg-neutral-900 bg-opacity-70 fixed top-0 right-0 left-0 w-screen auth-modal hidden modal-backdrop'>
   <div class='flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0'>
-    <div class='w-full bg-white rounded-lg shadow md:mt-0 sm:max-w-md xl:p-0 relative'>
-      <div class=' absolute z-10 right-3 text-neutral-900 text-4xl cursor-pointer close-auth'>×</div>
+    <div class='w-full bg-white rounded-lg shadow md:mt-0 sm:max-w-md xl:p-0'>
 
-      <div class='p-6 space-y-4 md:space-y-6 sm:p-8 relative'>
-        <h1 class='text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl'>
+      <div class='p-6  sm:p-8 relative modal-inner'>
+        <div class='absolute z-10 right-3 top-1 text-neutral-900 text-4xl cursor-pointer close-auth'>×</div>
+        <h1 class='text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl  mb-4 md:mb-6'>
           Авторизация
         </h1>
         <form class='space-y-4 md:space-y-6' id='login-form'>
@@ -322,41 +323,41 @@
 </section>
 
 <div
-  class="font-sans-serif modal absolute h-screen w-screen z-10 top-0 right-0 bg-black bg-opacity-40 flex sm:items-center items-start justify-center hidden"
+  class='font-sans-serif modal absolute h-screen w-screen z-10 top-0 right-0 bg-black bg-opacity-40 flex sm:items-center items-start justify-center hidden'
 >
-  <div class="z-20 bg-white sm:px-11 px-8 sm:py-10 py-7 w-full sm:w-auto h-full sm:h-auto sm:rounded-sm">
-    <div class="flex items-center justify-between">
-      <h3 class="md:text-4xl sm:text-3xl text-xl font-bold">Корзина</h3>
-      <div class="close md:w-[25px] sm:w-5 w-4 md:h-[25px] sm:h-5 h-4" role="button">
-        <img src="/src/images/icons/x-mark.svg" alt="close button" />
+  <div class='z-20 bg-white sm:px-11 px-8 sm:py-10 py-7 w-full sm:w-auto h-full sm:h-auto sm:rounded-sm'>
+    <div class='flex items-center justify-between'>
+      <h3 class='md:text-4xl sm:text-3xl text-xl font-bold'>Корзина</h3>
+      <div class='close md:w-[25px] sm:w-5 w-4 md:h-[25px] sm:h-5 h-4' role='button'>
+        <img src='/src/images/icons/x-mark.svg' alt='close button' />
       </div>
     </div>
 
-    <div class="w-full mt-11">
-      <ul class="flex flex-col w-full space-y-[15px]">
+    <div class='w-full mt-11'>
+      <ul class='flex flex-col w-full space-y-[15px]'>
         <li
-          class="flex w-full sm:flex-row flex-wrap justify-between items-start pb-2.5 md:space-x-[384px] sm:space-x-[200px] border-b border-gray-5"
+          class='flex w-full sm:flex-row flex-wrap justify-between items-start pb-2.5 md:space-x-[384px] sm:space-x-[200px] border-b border-gray-5'
         >
-          <div class="leading-8">Ролл угорь стандарт</div>
-          <div class="flex items-center md:space-x-12 sm:space-x-10 space-x-4">
-            <div class="sm:text-lg text-base font-bold">250 ₴</div>
+          <div class='leading-8'>Ролл угорь стандарт</div>
+          <div class='flex items-center md:space-x-12 sm:space-x-10 space-x-4'>
+            <div class='sm:text-lg text-base font-bold'>250 ₴</div>
 
-            <div class="flex">
+            <div class='flex'>
               <div
-                class="border border-blue-6 text-blue-6 sm:w-10 sm:py-[3px] w-8 py-0.5 text-center sm:block hidden rounded-sm"
-                role="button"
+                class='border border-blue-6 text-blue-6 sm:w-10 sm:py-[3px] w-8 py-0.5 text-center sm:block hidden rounded-sm'
+                role='button'
               >
                 -
               </div>
               <input
-                type="number"
-                value="1"
-                class="arrows-none w-10 h-8 text-center appearance-none focus:ring-0 focus:outline-none focus:border-none"
+                type='number'
+                value='1'
+                class='arrows-none w-10 h-8 text-center appearance-none focus:ring-0 focus:outline-none focus:border-none'
               />
-              <div class="text-sm sm:hidden self-center ml-1">шт.</div>
+              <div class='text-sm sm:hidden self-center ml-1'>шт.</div>
               <div
-                class="border border-blue-6 text-blue-6 sm:w-10 sm:py-[3px] w-8 py-0.5 text-center sm:block hidden rounded-sm"
-                role="button"
+                class='border border-blue-6 text-blue-6 sm:w-10 sm:py-[3px] w-8 py-0.5 text-center sm:block hidden rounded-sm'
+                role='button'
               >
                 +
               </div>
@@ -364,28 +365,28 @@
           </div>
         </li>
         <li
-          class="flex w-full sm:flex-row flex-wrap justify-between items-start pb-2.5 md:space-x-[384px] sm:space-x-[200px] border-b border-gray-5"
+          class='flex w-full sm:flex-row flex-wrap justify-between items-start pb-2.5 md:space-x-[384px] sm:space-x-[200px] border-b border-gray-5'
         >
-          <div class="leading-8">Ролл угорь стандарт</div>
-          <div class="flex items-center md:space-x-12 sm:space-x-10 space-x-4">
-            <div class="sm:text-lg text-base font-bold">250 ₴</div>
+          <div class='leading-8'>Ролл угорь стандарт</div>
+          <div class='flex items-center md:space-x-12 sm:space-x-10 space-x-4'>
+            <div class='sm:text-lg text-base font-bold'>250 ₴</div>
 
-            <div class="flex">
+            <div class='flex'>
               <div
-                class="border border-blue-6 text-blue-6 sm:w-10 sm:py-[3px] w-8 py-0.5 text-center sm:block hidden rounded-sm"
-                role="button"
+                class='border border-blue-6 text-blue-6 sm:w-10 sm:py-[3px] w-8 py-0.5 text-center sm:block hidden rounded-sm'
+                role='button'
               >
                 -
               </div>
               <input
-                type="number"
-                value="1"
-                class="arrows-none w-10 h-8 text-center appearance-none focus:ring-0 focus:outline-none focus:border-none"
+                type='number'
+                value='1'
+                class='arrows-none w-10 h-8 text-center appearance-none focus:ring-0 focus:outline-none focus:border-none'
               />
-              <div class="text-sm sm:hidden self-center ml-1">шт.</div>
+              <div class='text-sm sm:hidden self-center ml-1'>шт.</div>
               <div
-                class="border border-blue-6 text-blue-6 sm:w-10 sm:py-[3px] w-8 py-0.5 text-center sm:block hidden rounded-sm"
-                role="button"
+                class='border border-blue-6 text-blue-6 sm:w-10 sm:py-[3px] w-8 py-0.5 text-center sm:block hidden rounded-sm'
+                role='button'
               >
                 +
               </div>
@@ -393,28 +394,28 @@
           </div>
         </li>
         <li
-          class="flex w-full sm:flex-row flex-wrap justify-between items-start pb-2.5 md:space-x-[384px] sm:space-x-[200px] border-b border-gray-5"
+          class='flex w-full sm:flex-row flex-wrap justify-between items-start pb-2.5 md:space-x-[384px] sm:space-x-[200px] border-b border-gray-5'
         >
-          <div class="leading-8">Ролл угорь стандарт</div>
-          <div class="flex items-center md:space-x-12 sm:space-x-10 space-x-4">
-            <div class="sm:text-lg text-base font-bold">250 ₴</div>
+          <div class='leading-8'>Ролл угорь стандарт</div>
+          <div class='flex items-center md:space-x-12 sm:space-x-10 space-x-4'>
+            <div class='sm:text-lg text-base font-bold'>250 ₴</div>
 
-            <div class="flex">
+            <div class='flex'>
               <div
-                class="border border-blue-6 text-blue-6 sm:w-10 sm:py-[3px] w-8 py-0.5 text-center sm:block hidden rounded-sm"
-                role="button"
+                class='border border-blue-6 text-blue-6 sm:w-10 sm:py-[3px] w-8 py-0.5 text-center sm:block hidden rounded-sm'
+                role='button'
               >
                 -
               </div>
               <input
-                type="number"
-                value="1"
-                class="arrows-none w-10 h-8 text-center appearance-none focus:ring-0 focus:outline-none focus:border-none"
+                type='number'
+                value='1'
+                class='arrows-none w-10 h-8 text-center appearance-none focus:ring-0 focus:outline-none focus:border-none'
               />
-              <div class="text-sm sm:hidden self-center ml-1">шт.</div>
+              <div class='text-sm sm:hidden self-center ml-1'>шт.</div>
               <div
-                class="border border-blue-6 text-blue-6 sm:w-10 sm:py-[3px] w-8 py-0.5 text-center sm:block hidden rounded-sm"
-                role="button"
+                class='border border-blue-6 text-blue-6 sm:w-10 sm:py-[3px] w-8 py-0.5 text-center sm:block hidden rounded-sm'
+                role='button'
               >
                 +
               </div>
@@ -422,28 +423,28 @@
           </div>
         </li>
         <li
-          class="flex w-full sm:flex-row flex-wrap justify-between items-start pb-2.5 md:space-x-[384px] sm:space-x-[200px] border-b border-gray-5"
+          class='flex w-full sm:flex-row flex-wrap justify-between items-start pb-2.5 md:space-x-[384px] sm:space-x-[200px] border-b border-gray-5'
         >
-          <div class="leading-8">Ролл угорь стандарт</div>
-          <div class="flex items-center md:space-x-12 sm:space-x-10 space-x-4">
-            <div class="sm:text-lg text-base font-bold">250 ₴</div>
+          <div class='leading-8'>Ролл угорь стандарт</div>
+          <div class='flex items-center md:space-x-12 sm:space-x-10 space-x-4'>
+            <div class='sm:text-lg text-base font-bold'>250 ₴</div>
 
-            <div class="flex">
+            <div class='flex'>
               <div
-                class="border border-blue-6 text-blue-6 sm:w-10 sm:py-[3px] w-8 py-0.5 text-center sm:block hidden rounded-sm"
-                role="button"
+                class='border border-blue-6 text-blue-6 sm:w-10 sm:py-[3px] w-8 py-0.5 text-center sm:block hidden rounded-sm'
+                role='button'
               >
                 -
               </div>
               <input
-                type="number"
-                value="1"
-                class="arrows-none w-10 h-8 text-center appearance-none focus:ring-0 focus:outline-none focus:border-none"
+                type='number'
+                value='1'
+                class='arrows-none w-10 h-8 text-center appearance-none focus:ring-0 focus:outline-none focus:border-none'
               />
-              <div class="text-sm sm:hidden self-center ml-1">шт.</div>
+              <div class='text-sm sm:hidden self-center ml-1'>шт.</div>
               <div
-                class="border border-blue-6 text-blue-6 sm:w-10 sm:py-[3px] w-8 py-0.5 text-center sm:block hidden rounded-sm"
-                role="button"
+                class='border border-blue-6 text-blue-6 sm:w-10 sm:py-[3px] w-8 py-0.5 text-center sm:block hidden rounded-sm'
+                role='button'
               >
                 +
               </div>
@@ -451,28 +452,28 @@
           </div>
         </li>
         <li
-          class="flex w-full sm:flex-row flex-wrap justify-between items-start pb-2.5 md:space-x-[384px] sm:space-x-[200px] border-b border-gray-5"
+          class='flex w-full sm:flex-row flex-wrap justify-between items-start pb-2.5 md:space-x-[384px] sm:space-x-[200px] border-b border-gray-5'
         >
-          <div class="leading-8">Ролл угорь стандарт</div>
-          <div class="flex items-center md:space-x-12 sm:space-x-10 space-x-4">
-            <div class="sm:text-lg text-base font-bold">250 ₴</div>
+          <div class='leading-8'>Ролл угорь стандарт</div>
+          <div class='flex items-center md:space-x-12 sm:space-x-10 space-x-4'>
+            <div class='sm:text-lg text-base font-bold'>250 ₴</div>
 
-            <div class="flex">
+            <div class='flex'>
               <div
-                class="border border-blue-6 text-blue-6 sm:w-10 sm:py-[3px] w-8 py-0.5 text-center sm:block hidden rounded-sm"
-                role="button"
+                class='border border-blue-6 text-blue-6 sm:w-10 sm:py-[3px] w-8 py-0.5 text-center sm:block hidden rounded-sm'
+                role='button'
               >
                 -
               </div>
               <input
-                type="number"
-                value="1"
-                class="arrows-none w-10 h-8 text-center appearance-none focus:ring-0 focus:outline-none focus:border-none"
+                type='number'
+                value='1'
+                class='arrows-none w-10 h-8 text-center appearance-none focus:ring-0 focus:outline-none focus:border-none'
               />
-              <div class="text-sm sm:hidden self-center ml-1">шт.</div>
+              <div class='text-sm sm:hidden self-center ml-1'>шт.</div>
               <div
-                class="border border-blue-6 text-blue-6 sm:w-10 sm:py-[3px] w-8 py-0.5 text-center sm:block hidden rounded-sm"
-                role="button"
+                class='border border-blue-6 text-blue-6 sm:w-10 sm:py-[3px] w-8 py-0.5 text-center sm:block hidden rounded-sm'
+                role='button'
               >
                 +
               </div>
@@ -482,20 +483,20 @@
       </ul>
     </div>
 
-    <div class="w-full mt-[52px] flex justify-between items-center">
+    <div class='w-full mt-[52px] flex justify-between items-center'>
       <div>
         <div
-          class="bg-gray-9 text-gray-2 sm:px-5 px-2 sm:py-3 py-2 sm:text-lg text-base sm:rounded-md rounded-sm font-bold"
+          class='bg-gray-9 text-gray-2 sm:px-5 px-2 sm:py-3 py-2 sm:text-lg text-base sm:rounded-md rounded-sm font-bold'
         >
           1250 ₴
         </div>
       </div>
 
-      <div class="sm:space-x-[18px] space-x-2 flex">
-        <div class="bg-blue-6 sm:px-4 px-3 py-2 text-white rounded-sm sm:text-base text-sm" role="button">
+      <div class='sm:space-x-[18px] space-x-2 flex'>
+        <div class='bg-blue-6 sm:px-4 px-3 py-2 text-white rounded-sm sm:text-base text-sm' role='button'>
           Оформить заказ
         </div>
-        <div class="bg-white border border-gray-5 sm:px-4 px-3 py-2 rounded-xm close text-sm" role="button">
+        <div class='bg-white border border-gray-5 sm:px-4 px-3 py-2 rounded-xm close text-sm' role='button'>
           Отмена
         </div>
       </div>
