@@ -20,6 +20,7 @@ const cardsRestaurants = document.querySelector('.cards-restaurants')
 const cardsMenu = document.querySelector('.menu')
 const menuBlock = document.querySelector('.menu-block')
 const main = document.querySelector('.main')
+const inputSearch = document.querySelector('.input-search')
 
 function getData(url) {
   return fetch(url)
@@ -163,7 +164,9 @@ function openGoods(event) {
 
       cardsMenu.textContent = ''
 
-      const res = getData('./db/' + restaurant.dataset.products).then(data => data.forEach(createCardGood))
+      cardsRestaurants.textContent = ''
+      cardsMenu.textContent = ''
+      getData('./db/' + restaurant.dataset.products).then(data => data.forEach(createCardGood))
     }
   } else {
     toggleModalAuth()
@@ -206,6 +209,43 @@ function createCardGood(item) {
 logo.addEventListener('click', () => {
   menuBlock.classList.add('hidden')
   main.classList.remove('hidden')
+
+  getData('./db/partners.json').then(data => data.forEach(createCardRestaurant))
+})
+
+inputSearch.addEventListener('keydown', event => {
+  if (event.key == 'Enter') {
+    const value = event.target.value.trim()
+
+    if (!value) {
+      event.target.classList.add('border-red-500')
+      event.target.value = ''
+      return
+    }
+
+    event.target.classList.remove('border-red-500')
+    cardsMenu.textContent = ''
+    getData('./db/partners.json')
+      .then(data => data.map(partner => partner.products))
+      .then(links => {
+        cardsRestaurants.textContent = ''
+        cardsMenu.textContent = ''
+        links.forEach(link => {
+          getData(`./db/${link}`).then(data => {
+            const resultSearch = data.filter(item => {
+              const name = item.name.toLowerCase()
+              return name.includes(value.toLowerCase())
+            })
+
+            menuBlock.classList.remove('hidden')
+            main.classList.add('hidden')
+
+            console.log(resultSearch)
+            resultSearch.forEach(createCardGood)
+          })
+        })
+      })
+  }
 })
 
 new Swiper('.swiper-container', {
