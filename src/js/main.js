@@ -21,6 +21,11 @@ const cardsMenu = document.querySelector('.menu')
 const menuBlock = document.querySelector('.menu-block')
 const main = document.querySelector('.main')
 const inputSearch = document.querySelector('.input-search')
+const modalBody = document.querySelector('.modal-body')
+const modalTotalPrice = document.querySelector('.modal-pricetag')
+const clearCartButton = document.querySelector('.clear-cart')
+
+const cart = []
 
 function getData(url) {
   return fetch(url)
@@ -58,11 +63,13 @@ function authorized() {
     localStorage.removeItem('user')
     logoutButton.classList.add('hidden')
     authButton.classList.remove('hidden')
+    cartButton.classList.add('hidden')
     logoutButton.removeEventListener('click', logOut)
     checkAuth()
   }
 
   console.log('Авторизован')
+  cartButton.classList.remove('hidden')
   authButton.classList.add('hidden')
   logoutButton.classList.remove('hidden')
 
@@ -177,7 +184,8 @@ function createCardGood(item) {
   console.log(item)
   const { description, image, name, price, id } = item
   const card = document.createElement('div')
-  card.className = 'rounded-lg shadow-md overflow-hidden'
+  card.id = id
+  card.className = 'rounded-lg shadow-md overflow-hidden card'
 
   card.insertAdjacentHTML(
     'beforeend',
@@ -185,7 +193,7 @@ function createCardGood(item) {
       <div class="w-full bg-cover bg-center bg-no-repeat h-[250px]" style='background-image: url(${image})'></div>
       <div class="bg-white md:px-6 sm:px-5 px-4 sm:pt-5 pt-4 md:pb-9 sm:pb-8 pb-7">
         <div class="space-y-2.5">
-          <h4 class="md:text-2xl sm:text-xl text-lg line-clamp-1">${name}</h4>
+          <h4 class="md:text-2xl sm:text-xl text-lg line-clamp-1 card-title">${name}</h4>
 
           <p class="text-gray-7 line-clamp-2 sm:text-base text-sm">
             ${description}
@@ -193,11 +201,11 @@ function createCardGood(item) {
         </div>
 
         <div class="space-x-8 mt-6 flex items-center">
-          <a href="#" class="py-2 px-4 borderrounded-sm text-white bg-blue-6 flex items-center">
+          <a href="#" class="py-2 px-4 border rounded-sm text-white bg-blue-6 flex items-center button-add-cart">
             <span>В корзину</span>
             <img src="./src/images/icons/cart-white.svg" alt="cart icon" class="ml-1" />
           </a>
-          <div class="sm:text-xl font-bold text-lg">${price} ₴</div>
+          <div class="sm:text-xl font-bold text-lg card-price">${price} ₴</div>
         </div>
       </div>
 	`
@@ -246,6 +254,110 @@ inputSearch.addEventListener('keydown', event => {
         })
       })
   }
+})
+
+cardsMenu.addEventListener('click', addToCard)
+function addToCard(event) {
+  const target = event.target
+
+  const buttonAddToCard = target.closest('.button-add-cart')
+
+  if (buttonAddToCard) {
+    const card = target.closest('.card')
+    const title = card.querySelector('.card-title').textContent
+    const price = card.querySelector('.card-price').textContent
+    const id = card.id
+
+    const food = cart.find(item => item.id === id)
+    if (food) {
+      food.count += 1
+      return
+    }
+
+    cart.push({ title, price, id, count: 1 })
+    renderCart()
+  }
+}
+
+function renderCart() {
+  modalBody.textContent = ''
+
+  if (cart.length === 0) {
+    const emptyCart = `
+    <li
+    class="food-row flex w-full sm:flex-row flex-wrap justify-between items-start pb-2.5 md:space-x-[384px] sm:space-x-[200px] border-b border-gray-5"
+  >
+    <span>Тут пусто, попробуйте что-то выбрать</span>
+    <span></span>
+  </li>
+    `
+    modalBody.insertAdjacentHTML('beforeend', emptyCart)
+  }
+
+  cart.forEach(({ title, price, id, count }) => {
+    const itemCart = `
+    <li id="${id}"
+    class="food-row flex w-full sm:flex-row flex-wrap justify-between items-start pb-2.5 md:space-x-[384px] sm:space-x-[200px] border-b border-gray-5"
+  >
+    <div class="leading-8">${title}</div>
+    <div class="flex items-center md:space-x-12 sm:space-x-10 space-x-4">
+      <div class="sm:text-lg text-base font-bold">${price}</div>
+
+      <div class="flex">
+        <div
+          class="border border-blue-6 text-blue-6 sm:w-10 sm:py-[3px] w-8 py-0.5 text-center sm:block hidden rounded-sm"
+          role="button" data-id="${id}"
+        >
+          -
+        </div>
+        <input
+          disabled
+          type="number"
+          value="${count}"
+          class="arrows-none w-10 h-8 text-center appearance-none focus:ring-0 focus:outline-none focus:border-none"
+        />
+        <div class="text-sm sm:hidden self-center ml-1">шт.</div>
+        <div
+          class="border border-blue-6 text-blue-6 sm:w-10 sm:py-[3px] w-8 py-0.5 text-center sm:block hidden rounded-sm"
+          role="button" data-id="${id}"
+        >
+          +
+        </div>
+      </div>
+    </div>
+  </li>
+    `
+    modalBody.insertAdjacentHTML('beforeend', itemCart)
+  })
+
+  const totalPrice = cart.reduce((result, item) => result + parseFloat(item.price) * item.count, 0)
+  modalTotalPrice.textContent = totalPrice + ' ₴'
+}
+renderCart()
+
+modalBody.addEventListener('click', changeCount)
+function changeCount(event) {
+  const target = event.target
+
+  if (target.classList.contains('border-blue-6')) {
+    const food = cart.find(item => item.id === target.closest('.food-row').id)
+
+    console.log(target.textContent.contains)
+    if (target.textContent.includes('-')) {
+      food.count--
+      if (food.count === 0) {
+        cart.splice(cart.indexOf(food), 1)
+      }
+    } else {
+      food.count++
+    }
+    renderCart()
+  }
+}
+
+clearCartButton.addEventListener('click', () => {
+  cart.length = 0
+  renderCart()
 })
 
 new Swiper('.swiper-container', {
