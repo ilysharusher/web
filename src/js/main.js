@@ -204,3 +204,14 @@ logo.addEventListener('click', () => {
   menuBlock.classList.add('hidden')
   main.classList.remove('hidden')
 })
+
+new Swiper('.swiper-container', {
+  sliderPerView: 1,
+  loop: true,
+  autoplay: true,
+  spaceBetween: 10,
+  effect: 'cube',
+  cubeEffect: {
+    shadow: false,
+  },
+})

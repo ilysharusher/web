@@ -4,6 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="./dist/output.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <title>Food Delivery</title>
   </head>
   <body style="background: linear-gradient(180deg, rgba(245, 245, 245, 0) 1.04%, #f5f5f5 100%)">
@@ -51,17 +53,61 @@
 
     <main class="font-sans-serif main">
       <section class="xl:max-w-[1200px] mx-0 sm:mx-auto px-4 sm:px-0 container">
-        <div
-          class="max-h-[300px] w-full bg-[url(/src/images/banners/vegetables.jpg)] bg-cover bg-no-repeat md:p-[68px] sm:p-10 p-5 shadow-sm rounded-[10px]"
-        >
-          <div class="text-gray-banner md:max-w-[540px] max-w-[400px]">
-            <h1 class="md:text-[39px] sm:text-3xl text-2xl font-bold">
-              Онлайн-сервис <br />
-              доставки еды на дом
-            </h1>
-            <p class="md:text-2xl dm:text-xl text-lg">
-              Блюда из любимого ресторана привезет курьер в перчатках, маске и с антисептиком
-            </p>
+        <div class="swiper-container">
+          <div class="swiper-wrapper">
+            <section
+              class="max-h-[300px] swiper-slide w-full pizza bg-no-repeat md:p-[68px] sm:p-10 p-5 shadow-sm rounded-[10px]"
+            >
+              <div class="text-gray-banner md:max-w-[540px] max-w-[400px]">
+                <h2 class="md:text-[39px] sm:text-3xl text-2xl font-bold">
+                  Онлайн-сервис <br />
+                  доставки еды на дом
+                </h2>
+                <p class="md:text-2xl dm:text-xl text-lg">
+                  Блюда из любимого ресторана привезет курьер в перчатках, маске и с антисептиком
+                </p>
+              </div>
+            </section>
+
+            <section
+              class="max-h-[300px] swiper-slide w-full kebab bg-no-repeat md:p-[68px] sm:p-10 p-5 shadow-sm rounded-[10px]"
+            >
+              <div class="text-gray-banner md:max-w-[540px] max-w-[400px]">
+                <h2 class="md:text-[39px] sm:text-3xl text-2xl font-bold">
+                  Шашлыки на майские <br />
+                  со скидкой 35%
+                </h2>
+                <p class="md:text-2xl dm:text-xl text-lg">
+                  Закажите шашлыки в любом ресторане до 10 мая и получите скидку по промокоду OMAGAD
+                </p>
+              </div>
+            </section>
+
+            <section
+              class="max-h-[300px] swiper-slide w-full vegetables bg-no-repeat md:p-[68px] sm:p-10 p-5 shadow-sm rounded-[10px]"
+            >
+              <div class="text-gray-banner md:max-w-[540px] max-w-[400px]">
+                <h2 class="md:text-[39px] sm:text-3xl text-2xl font-bold">
+                  Скидка 20% на всю еду <br />
+                  по промокоду LOVE.JS
+                </h2>
+                <p class="md:text-2xl dm:text-xl text-lg">
+                  Блюдо из ресторана привезут вместе с двумя подарочными книгами по фронтенду
+                </p>
+              </div>
+            </section>
+
+            <section
+              class="max-h-[300px] swiper-slide w-full sushi bg-[#FFF1F0] bg-no-repeat md:p-[68px] sm:p-10 p-5 shadow-sm rounded-[10px]"
+            >
+              <div class="text-gray-banner md:max-w-[540px] max-w-[400px]">
+                <h2 class="md:text-[39px] sm:text-3xl text-2xl font-bold">
+                  Сеты со скидкой до 30% <br />
+                  в ресторанах
+                </h2>
+                <p class="md:text-2xl dm:text-xl text-lg">Скидки на сеты до 30 мая по промокоду DADADA</p>
+              </div>
+            </section>
           </div>
         </div>
       </section>
