@@ -21,6 +21,16 @@ const cardsMenu = document.querySelector('.menu')
 const menuBlock = document.querySelector('.menu-block')
 const main = document.querySelector('.main')
 
+function getData(url) {
+  return fetch(url)
+    .then(res => res.json())
+    .then(data => data)
+    .catch(err => {
+      throw new Error(`Ошибка по адресу ${url}, статус ошибки ${err.status}`)
+    })
+}
+getData('./db/partners.json').then(data => data.forEach(createCardRestaurant))
+
 cartButton.addEventListener('click', toggleModal)
 
 function toggleModal() {
@@ -92,7 +102,6 @@ function notAuthorized() {
 }
 
 function checkAuth() {
-  console.log('checkAuth')
   if (login) {
     authorized()
   } else {
@@ -102,49 +111,44 @@ function checkAuth() {
 
 checkAuth()
 
-function createCardRestaurant() {
+function createCardRestaurant(restaurant) {
   const card = document.createElement('a')
-  //{ image, kitchen, name, price, stars, products, time_of_delivery: timeOfDelivery }
-  // card.className = 'card card-restaurant'
-  // card.products = products
-  // card.info = [name, price, stars, kitchen]
+  const { image, kitchen, name, price, stars, products, time_of_delivery: timeOfDelivery } = restaurant
+  card.className = 'card'
+  card.setAttribute('data-products', products)
 
   card.insertAdjacentHTML(
     'beforeend',
     `
-    <div class='rounded-lg shadow-md overflow-hidden reveal-step-animation card'>
+    <div class='rounded-lg shadow-md overflow-hidden reveal-step-animation'>
       <div
-        class='w-full bg-cover bg-center bg-no-repeat h-[250px] bg-[url(/src/images/products/pizza-plus.jpg)]'
+        class='w-full bg-cover bg-center bg-no-repeat h-[250px]' style='background-image: url(${image})'
       ></div>
       <div class='bg-white md:px-6 sm:px-5 px-4 sm:pt-5 pt-4 md:pb-9 sm:pb-8 pb-7'>
         <div class='flex items-center justify-between'>
-          <h4 class='font-bold md:text-2xl sm:text-xl text-lg'>Пицца плюс</h4>
+          <h4 class='font-bold md:text-2xl sm:text-xl text-lg'>${name}</h4>
 
-          <div class='px-2 bg-black text-white sm:text-[12px] text-[11px] leading-5 rounded-sm'>50 мин</div>
+          <div class='px-2 bg-black text-white sm:text-[12px] text-[11px] leading-5 rounded-sm'>${timeOfDelivery} мин</div>
         </div>
 
         <div class='flex items-baseline space-x-6 mt-2.5'>
           <div class='text-yellow-rating flex items-baseline sm:text-base text-sm'>
             <img src='./src/images/icons/rating.svg' alt='search icon' class='mr-2' />
 
-            4.5
+            ${stars}
           </div>
 
           <div class='text-gray-7 md:text-lg sm:text-base text-sm'>
-            От 900 ₴
-            <span class='font-bold px-2'>•</span> Пицца
+            От ${price} ₴
+            <span class='font-bold px-2'>•</span> ${kitchen}
           </div>
         </div>
       </div>
     </div>
 	`
   )
-  console.log(card)
   cardsRestaurants.insertAdjacentElement('beforeend', card)
 }
-createCardRestaurant()
-createCardRestaurant()
-createCardRestaurant()
 
 cardsRestaurants.addEventListener('click', openGoods)
 
@@ -159,30 +163,29 @@ function openGoods(event) {
 
       cardsMenu.textContent = ''
 
-      createCardGood()
-      createCardGood()
-      createCardGood()
+      const res = getData('./db/' + restaurant.dataset.products).then(data => data.forEach(createCardGood))
     }
   } else {
     toggleModalAuth()
   }
 }
 
-function createCardGood() {
-  //{ description, image, name, price, id }
+function createCardGood(item) {
+  console.log(item)
+  const { description, image, name, price, id } = item
   const card = document.createElement('div')
   card.className = 'rounded-lg shadow-md overflow-hidden'
 
   card.insertAdjacentHTML(
     'beforeend',
     `
-      <div class="w-full bg-cover bg-center bg-no-repeat h-[250px] bg-[url(/src/images/products/sushi/sushi1.png)]"></div>
+      <div class="w-full bg-cover bg-center bg-no-repeat h-[250px]" style='background-image: url(${image})'></div>
       <div class="bg-white md:px-6 sm:px-5 px-4 sm:pt-5 pt-4 md:pb-9 sm:pb-8 pb-7">
         <div class="space-y-2.5">
-          <h4 class="md:text-2xl sm:text-xl text-lg line-clamp-1">Ролл угорь стандарт</h4>
+          <h4 class="md:text-2xl sm:text-xl text-lg line-clamp-1">${name}</h4>
 
           <p class="text-gray-7 line-clamp-2 sm:text-base text-sm">
-            Рис, угорь, соус унаги, кунжут, водоросли нори.
+            ${description}
           </p>
         </div>
 
@@ -191,7 +194,7 @@ function createCardGood() {
             <span>В корзину</span>
             <img src="./src/images/icons/cart-white.svg" alt="cart icon" class="ml-1" />
           </a>
-          <div class="sm:text-xl font-bold text-lg">250 ₴</div>
+          <div class="sm:text-xl font-bold text-lg">${price} ₴</div>
         </div>
       </div>
 	`
